@@ -1,8 +1,7 @@
 # Import python packages
 # import Streamlit library and assign it the alias 'st'
 import streamlit as st
-# import 'get_active_session' function from Snowflake Snowpark library
-from snowflake.snowpark.context import get_active_session
+
 # import 'col' function from snowflake snowpark
 # it is used to reference columns in Snowflake tables
 from snowflake.snowpark.functions import col
@@ -38,7 +37,8 @@ st.write(
 # This line gets the active Snowflake session 
 # using the get_active_session function 
 # and assigns it to the variable session.
-session = get_active_session()
+cnx = st.connection("snowflake")
+session = cnx.session()
 # create dataframe 'my_dataframe'
 # by querying Snowflake table smoothies.public.fruit_options
 # select column of 'fruit_name' using col function

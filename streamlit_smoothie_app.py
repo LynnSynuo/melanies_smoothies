@@ -69,6 +69,8 @@ if ingredients_list:
     ingredients_string = '' # initialize the string with ''
     for each_fruit in ingredients_list:
         ingredients_string += each_fruit +' '
+        fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+        fv_df = st.dataframe(data = fruityvice_response.json(), use_container_width = True)
     
     st.write(ingredients_string) # write the ingredients_string in Streamlit app
 
@@ -102,6 +104,4 @@ if ingredients_list:
         # to add a name in the st.success message
         st.success(f'Your Smoothie is ordered! {name_on_order}', icon = "✅")
 
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-# st.text(fruityvice_response.json())
-fv_df = st.dataframe(data = fruityvice_response.json(), use_container_width = True)
+

@@ -5,6 +5,7 @@ import streamlit as st
 # import 'col' function from snowflake snowpark
 # it is used to reference columns in Snowflake tables
 from snowflake.snowpark.functions import col
+import requests
 
 
 
@@ -100,3 +101,6 @@ if ingredients_list:
         # st.success('Your Smoothie is ordered!', icon = "✅")
         # to add a name in the st.success message
         st.success(f'Your Smoothie is ordered! {name_on_order}', icon = "✅")
+
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+st.text(fruityvice_response)

@@ -1,6 +1,7 @@
 # Import python packages
 # import Streamlit library and assign it the alias 'st'
 import streamlit as st
+import pandas as pd
 
 # import 'col' function from snowflake snowpark
 # it is used to reference columns in Snowflake tables

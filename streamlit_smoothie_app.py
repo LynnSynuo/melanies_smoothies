@@ -53,8 +53,8 @@ my_dataframe = session.table('smoothies.public.fruit_options').select(col('FRUIT
 
 # convert the Snowpark Dataframe to a Pandas Dataframe so we can use the LOC function
 pd_df = my_dataframe.to_pandas()
-st.dataframe(pd_df)
-st.stop()
+# st.dataframe(pd_df)
+# st.stop()
 
 
 name_on_order = st.text_input("Name on Smoothie:")

@@ -43,12 +43,12 @@ session = cnx.session()
 # create dataframe 'my_dataframe'
 # by querying Snowflake table smoothies.public.fruit_options
 # select column of 'fruit_name' using col function
-my_dataframe = session.table('smoothies.public.fruit_options').select(col('FRUIT_NAME'))
+my_dataframe = session.table('smoothies.public.fruit_options').select(col('FRUIT_NAME'), col('SEARCH_ON'))
 # display the table in Streamlit app using st.dataframe function
 # use_container_width = True is to fit width based on the container
 
-# st.dataframe(data = my_dataframe, use_container_width = True)
-
+st.dataframe(data = my_dataframe, use_container_width = True)
+st.stop()
 
 
 name_on_order = st.text_input("Name on Smoothie:")
